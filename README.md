@@ -54,39 +54,10 @@ baseline.
    ```
 
 3. **Optimizers** search the space of `[NS_green, EW_green, ...]` timings,
-   each bounded to 5–60 seconds per phase, to minimize that fitness.
+   each bounded to 5–60 seconds per phase, to minimize that fitness.  ![Optimizer Performance](results/pt.png)
 
 ```
-┌──────────────────────┐
-│      OPTIMIZER       │
-│      PSO / GA        │
-└──────────┬───────────┘
-           │
-           │ Candidate Signal Timings
-           ▼
-┌─────────────────────────────────┐
-│       TRAFFIC SIMULATION        │
-│                                 │
-│  ┌────────┐ ┌────────┐ ┌──────┐ │
-│  │  LOW   │ │ MEDIUM │ │ HIGH │ │
-│  │TRAFFIC │ │TRAFFIC │ │TRAFFIC││
-│  └────────┘ └────────┘ └──────┘ │
-│                                 │
-│   Evaluate Traffic Performance  │
-└───────────────┬─────────────────┘
-                │
-                │ Fitness Score
-                ▼
-┌──────────────────────┐
-│      OPTIMIZER       │
-│  Update Population   │
-│  / Candidate Solution│
-└──────────┬───────────┘
-           │
-           └───────────────► Repeat
-                              │
-                              ▼
-                       Best Timing Plan
+
 ```
 
 ## Algorithms
